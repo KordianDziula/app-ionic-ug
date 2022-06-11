@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      HolidaysApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <capacitor-google-maps #map></capacitor-google-maps>
+  
+  <div class="scrollable">
+    <ion-card *ngFor="let h of holidays">
+      <ion-card-header>
+        <ion-card-subtitle> {{h.date}}</ion-card-subtitle>
+        <ion-card-title>{{h.title}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{h.description}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
